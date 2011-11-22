@@ -1,4 +1,6 @@
-a hack that uses parse.com for persistence and backbone-rails for the view layer
+a hack that uses parse.com for persistence and backbone-rails for the view layer.
+
+running on heroku here http://fierce-ice-1746.heroku.com/
 
 if you want to get this working you'll need to add parse.rb to your initializers directory.
 
