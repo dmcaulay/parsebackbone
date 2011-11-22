@@ -1,5 +1,18 @@
+a hack that uses parse.com for persistence and backbone-rails for the view layer
+
 if you want to get this working you'll need to add parse.rb to your initializers directory.
 
 Parsebackbone::Application.config.parse_base_url = 'https://api.parse.com/1/classes/'
 Parsebackbone::Application.config.parse_app_id = 'your application id'
 Parsebackbone::Application.config.parse_master_key = 'your master key'
+
+you can generate backbone models using the backbone-rails scaffold generator.
+rails g backbone:scaffold Post title:string content:string
+
+i was originally hoping you wouldn't have to do anything after the generator, but you still have to add an idAttribute to your model.
+idAttribute: 'objectId'
+
+and you need to change the links next to your model in the model.jst.ejs file because id is no longer valid.
+<td><a href="#/<%= objectId %>">Show</td>
+<td><a href="#/<%= objectId %>/edit">Edit</td>
+<td><a href="#/<%= objectId %>/destroy" class="destroy">Destroy</a></td>
