@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
   $(function() {
-    window.router = new Parsebackbone.Routers.<%= @collection.classify.pluralize %>Router({<%= @collection %>: <%= ActiveSupport::JSON.encode(@values).html_safe -%>});
+    window.router = new Parsebackbone.Routers.<%= @collection.classify.pluralize %>Router({<%= @collection.camelize(:lower) %>: <%= ActiveSupport::JSON.encode(@values).html_safe -%>});
     Backbone.history.start();
   });
 </script>
